@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Paining</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body style="font-family: Balsamiq Sans;">
+    <div class="header">
+        <div style="text-align: right;padding-right: 500px;margin-top: 20px;">
+            <a href="/dashboard">Dashboard</a> |
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+
+<div style="margin: 0px 500px;">
+    <h1 style="flex: 2;">Create Painting</h1>
+
+    {%for each_message in get_flashed_messages()%}
+    <p style="color: red;">{{each_message}}</p>
+    {%endfor%}
+
+    <form action="/new" method="post">
+
+        <div class="left_form">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title: </label>
+                <input type="text" name="title" class="form-control" id="exampleInputEmail1 title" aria-describedby="emailHelp">
+            </div>
+    
+            <div class="mb-3">
+                <label for="description" class="form-label">Description: </label>
+                <textarea name="description" id="exampleInputEmail1" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+
+        </div>
+
+
+    <div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price of Painting</label>
+            <input type="number" id="exampleInputPassword1 price" name="price" placeholder="">
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity </label>
+            <input type="number" name="quantity" id="quantity">
+
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
